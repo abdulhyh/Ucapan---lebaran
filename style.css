@@ -1,0 +1,26 @@
+body {
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.scroll-content {
+    height: 300px; /* Tinggi kotak scroll */
+    overflow-y: auto; /* Ini kunci agar bisa di-scroll */
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    line-height: 1.6;
+}

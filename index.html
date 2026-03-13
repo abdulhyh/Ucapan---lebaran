@@ -1,148 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Idul Fitri 1447H</title>
-    <style>
-        :root {
-            --gold: #d4af37;
-            --dark-green: #064e3b;
-            --cream: #fffbeb;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: var(--dark-green);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-green);
-            overflow: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-            opacity: 0.1;
-        }
-
-        .card {
-            background: var(--cream);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            border: 5px solid var(--gold);
-            position: relative;
-            z-index: 1;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--dark-green); }
-        .arabic { font-size: 1.8rem; margin: 20px 0; font-weight: bold; }
-        p { font-size: 1.1rem; line-height: 1.6; }
-        .footer-text { margin-top: 20px; font-weight: bold; color: var(--gold); }
-
-        /* Tombol Musik Baru */
-        .btn-audio {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: var(--dark-green);
-            color: white;
-            border: 2px solid var(--gold);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .ketupat {
-            font-size: 50px;
-            margin-bottom: 10px;
-            display: inline-block;
-            animation: swing 3s ease-in-out infinite;
-        }
-
-        @keyframes swing {
-            0%, 100% { transform: rotate(-10deg); }
-            50% { transform: rotate(10deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday!</title>
 </head>
 <body>
-
-    <div class="card">
-        <div class="ketupat">🎋</div>
-        <h1>Selamat Hari Raya Idul Fitri</h1>
-        <p class="arabic">تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ</p>
-        <p><i>Taqabbalallahu minna wa minkum</i></p>
-        <hr style="border: 0; border-top: 1px solid #d4af37; margin: 20px 0;">
-        <p>Mohon Maaf Lahir dan Batin atas segala khilaf dan salah. Semoga hari kemenangan ini membawa keberkahan bagi kita semua.</p>
-        
-        <button class="btn-audio" id="playBtn" onclick="togglePlay()">
-            <span>🎵</span> <span id="btnText">Putar Musik Arabic</span>
-        </button>
-
-        <div class="footer-text">
-            1 Syawal 1447 H
+    <div class="container">
+        <h1>Selamat Ulang Tahun!</h1>
+        <div class="scroll-content">
+            <p>Halo Nana,</p>
+            <p>Di hari spesial ini, aku cuma mau bilang...</p>
+            <p>happy birthday yang ke 16</p>
+            <p>Semoga sehat selalu, bahagia terus, dan mimpi-mimpinya tercapai.</p>
+            <p>Jangan lupa makan enak hari ini ya!</p>
+            <p><strong>- Dari aku yang sayang kamu</strong></p>
         </div>
     </div>
-
-    <audio id="myAudio" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-india.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        const audio = document.getElementById('myAudio');
-        const btnText = document.getElementById('btnText');
-        let isPlaying = false;
-
-        function togglePlay() {
-            if (!isPlaying) {
-                audio.play().then(() => {
-                    btnText.innerText = "Matikan Musik";
-                    isPlaying = true;
-                }).catch(err => {
-                    alert("Klik lagi ya, sedang memuat suara...");
-                });
-            } else {
-                audio.pause();
-                btnText.innerText = "Putar Musik Arabic";
-                isPlaying = false;
-            }
-        }
-
-        // Efek Bintang
-        function createStar() {
-            const star = document.createElement('div');
-            star.innerHTML = '✨';
-            star.style.position = 'absolute';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.fontSize = Math.random() * 20 + 10 + 'px';
-            star.style.opacity = Math.random();
-            star.style.pointerEvents = 'none';
-            document.body.appendChild(star);
-            setTimeout(() => { star.remove(); }, 3000);
-        }
-        setInterval(createStar, 500);
-    </script>
 </body>
 </html>
